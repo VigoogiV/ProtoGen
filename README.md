@@ -176,6 +176,25 @@ cargo test
 所以 `synth` 刻意避开了这两处，嵌套场景由 `edge` 单独覆盖（只与 nanopb 比对）。
 新实现在这两点上比旧工具正确，属于有意为之的行为差异。
 
+## 配套：C 端编解码封装
+
+`extras/pb_array/` 提供一个可选的 C 模块，把 nanopb 的编解码样板代码收进两个函数，
+并解决「多条消息拼进一个缓冲区后无法切分」的问题。
+
+```c
+/* 单条 */
+pb_msg_encode(buf, sizeof(buf), &msg, Msg_fields, &len, NULL);
+pb_msg_decode(buf, len, &msg, Msg_fields, NULL);
+
+/* 数组：每条前加 varint 长度前缀 */
+pb_array_encode(buf, sizeof(buf), arr, 10, sizeof(arr[0]), Msg_fields, &len, NULL);
+pb_array_decode(buf, len, out, 10, sizeof(out[0]), Msg_fields, &count, NULL);
+```
+
+线格式：`[len1:varint][payload1][len2:varint][payload2]...`
+
+详见 [extras/pb_array/README.md](extras/pb_array/README.md)。已在 gcc 7.3 + nanopb 0.3.9.1 上通过 8 项测试。
+
 ## 架构
 
 ```
