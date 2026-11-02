@@ -310,7 +310,7 @@ dependencies = [
 
 [[package]]
 name = "protogen-cli"
-version = "0.1.0"
+version = "2.0.0"
 dependencies = [
  "clap",
  "protogen-core",
@@ -318,7 +318,7 @@ dependencies = [
 
 [[package]]
 name = "protogen-core"
-version = "0.1.0"
+version = "2.0.0"
 dependencies = [
  "encoding_rs",
  "prost-types",
