@@ -1,0 +1,31 @@
+# Rust 构建产物
+/target/
+**/*.rs.bk
+
+# 本地拷贝的第三方工程，不属于本项目
+/BfTools/
+
+# 真实业务 proto 样本（含公司产品协议定义，不公开）
+/tests/golden/bf_*/
+
+# 内部技术评估与接入文档（含公司路径与产品型号）
+/doc/
+/docs/integration-bftools.md
+
+# AI 工作记录
+/.workbuddy-ai/
+
+# 编辑器
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 系统
+Thumbs.db
+.DS_Store
+desktop.ini
+
+# 临时文件
+*.tmp
+*.log

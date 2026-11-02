@@ -1,0 +1,13 @@
+[package]
+name = "protogen-cli"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[[bin]]
+name = "protogen"
+path = "src/main.rs"
+
+[dependencies]
+protogen-core = { path = "../protogen-core" }
+clap.workspace = true

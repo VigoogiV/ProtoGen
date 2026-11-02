@@ -1,0 +1,1837 @@
+// 合成压力测试样本：120 个 message / 3 个 enum / 密集注释
+// 由 tests/gen_synth.py 生成，请勿手工修改
+syntax = "proto3";
+
+option optimize_for = LITE_RUNTIME;
+
+/** 枚举 ENUM_00 的说明 **/
+enum ENUM_00 {
+    ENUM_00_VALUE_0 = 0;    /** 枚举值 0 的说明 **/
+    ENUM_00_VALUE_1 = 10;
+    ENUM_00_VALUE_2 = 20;    /** 枚举值 2 的说明 **/
+    ENUM_00_VALUE_3 = 30;
+}
+
+/** 枚举 ENUM_01 的说明 **/
+enum ENUM_01 {
+    ENUM_01_VALUE_0 = 0;    /** 枚举值 0 的说明 **/
+    ENUM_01_VALUE_1 = 10;
+    ENUM_01_VALUE_2 = 20;    /** 枚举值 2 的说明 **/
+    ENUM_01_VALUE_3 = 30;
+}
+
+/** 枚举 ENUM_02 的说明 **/
+enum ENUM_02 {
+    ENUM_02_VALUE_0 = 0;    /** 枚举值 0 的说明 **/
+    ENUM_02_VALUE_1 = 10;
+    ENUM_02_VALUE_2 = 20;    /** 枚举值 2 的说明 **/
+    ENUM_02_VALUE_3 = 30;
+}
+
+// 消息 MSG_000 的说明（单行）
+message MSG_000 {
+    /** MSG_000 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_000.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_000.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_000 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+}
+
+/** 消息 MSG_001 的说明（块注释） **/
+message MSG_001 {
+    /** MSG_001 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_001.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_001.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_001 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_001.f05 行尾块注释 **/
+}
+
+message MSG_002 {
+    /** MSG_002 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_002.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_002.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_002 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_002.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+// 消息 MSG_003 的说明（单行）
+message MSG_003 {
+    /** MSG_003 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_003.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_003.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_003 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_003.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+/** 消息 MSG_004 的说明（块注释） **/
+message MSG_004 {
+    /** MSG_004 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_004.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_004.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_004 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_004.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_004 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+message MSG_005 {
+    /** MSG_005 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_005.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_005.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_005 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_005.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_005 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_005.f09 行尾块注释 **/
+}
+
+// 消息 MSG_006 的说明（单行）
+message MSG_006 {
+    /** MSG_006 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_006.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_006.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_006 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_006.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_006 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_006.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_006.f10 行尾单行注释
+}
+
+/** 消息 MSG_007 的说明（块注释） **/
+message MSG_007 {
+    /** MSG_007 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_007.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_007.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_007 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+}
+
+message MSG_008 {
+    /** MSG_008 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_008.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_008.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_008 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_008.f05 行尾块注释 **/
+}
+
+// 消息 MSG_009 的说明（单行）
+message MSG_009 {
+    /** MSG_009 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_009.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_009.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_009 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_009.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+/** 消息 MSG_010 的说明（块注释） **/
+message MSG_010 {
+    /** MSG_010 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_010.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_010.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_010 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_010.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+message MSG_011 {
+    /** MSG_011 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_011.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_011.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_011 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_011.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_011 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+// 消息 MSG_012 的说明（单行）
+message MSG_012 {
+    /** MSG_012 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_012.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_012.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_012 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_012.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_012 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_012.f09 行尾块注释 **/
+}
+
+/** 消息 MSG_013 的说明（块注释） **/
+message MSG_013 {
+    /** MSG_013 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_013.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_013.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_013 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_013.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_013 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_013.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_013.f10 行尾单行注释
+}
+
+message MSG_014 {
+    /** MSG_014 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_014.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_014.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_014 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+}
+
+// 消息 MSG_015 的说明（单行）
+message MSG_015 {
+    /** MSG_015 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_015.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_015.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_015 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_015.f05 行尾块注释 **/
+}
+
+/** 消息 MSG_016 的说明（块注释） **/
+message MSG_016 {
+    /** MSG_016 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_016.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_016.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_016 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_016.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+message MSG_017 {
+    /** MSG_017 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_017.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_017.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_017 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_017.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+// 消息 MSG_018 的说明（单行）
+message MSG_018 {
+    /** MSG_018 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_018.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_018.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_018 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_018.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_018 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+/** 消息 MSG_019 的说明（块注释） **/
+message MSG_019 {
+    /** MSG_019 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_019.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_019.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_019 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_019.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_019 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_019.f09 行尾块注释 **/
+}
+
+message MSG_020 {
+    /** MSG_020 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_020.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_020.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_020 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_020.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_020 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_020.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_020.f10 行尾单行注释
+}
+
+// 消息 MSG_021 的说明（单行）
+message MSG_021 {
+    /** MSG_021 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_021.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_021.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_021 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+}
+
+/** 消息 MSG_022 的说明（块注释） **/
+message MSG_022 {
+    /** MSG_022 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_022.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_022.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_022 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_022.f05 行尾块注释 **/
+}
+
+message MSG_023 {
+    /** MSG_023 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_023.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_023.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_023 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_023.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+// 消息 MSG_024 的说明（单行）
+message MSG_024 {
+    /** MSG_024 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_024.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_024.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_024 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_024.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+/** 消息 MSG_025 的说明（块注释） **/
+message MSG_025 {
+    /** MSG_025 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_025.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_025.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_025 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_025.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_025 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+message MSG_026 {
+    /** MSG_026 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_026.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_026.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_026 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_026.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_026 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_026.f09 行尾块注释 **/
+}
+
+// 消息 MSG_027 的说明（单行）
+message MSG_027 {
+    /** MSG_027 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_027.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_027.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_027 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_027.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_027 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_027.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_027.f10 行尾单行注释
+}
+
+/** 消息 MSG_028 的说明（块注释） **/
+message MSG_028 {
+    /** MSG_028 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_028.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_028.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_028 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+}
+
+message MSG_029 {
+    /** MSG_029 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_029.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_029.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_029 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_029.f05 行尾块注释 **/
+}
+
+// 消息 MSG_030 的说明（单行）
+message MSG_030 {
+    /** MSG_030 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_030.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_030.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_030 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_030.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+/** 消息 MSG_031 的说明（块注释） **/
+message MSG_031 {
+    /** MSG_031 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_031.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_031.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_031 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_031.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+message MSG_032 {
+    /** MSG_032 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_032.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_032.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_032 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_032.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_032 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+// 消息 MSG_033 的说明（单行）
+message MSG_033 {
+    /** MSG_033 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_033.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_033.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_033 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_033.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_033 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_033.f09 行尾块注释 **/
+}
+
+/** 消息 MSG_034 的说明（块注释） **/
+message MSG_034 {
+    /** MSG_034 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_034.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_034.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_034 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_034.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_034 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_034.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_034.f10 行尾单行注释
+}
+
+message MSG_035 {
+    /** MSG_035 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_035.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_035.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_035 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+}
+
+// 消息 MSG_036 的说明（单行）
+message MSG_036 {
+    /** MSG_036 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_036.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_036.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_036 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_036.f05 行尾块注释 **/
+}
+
+/** 消息 MSG_037 的说明（块注释） **/
+message MSG_037 {
+    /** MSG_037 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_037.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_037.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_037 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_037.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+message MSG_038 {
+    /** MSG_038 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_038.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_038.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_038 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_038.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+// 消息 MSG_039 的说明（单行）
+message MSG_039 {
+    /** MSG_039 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_039.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_039.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_039 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_039.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_039 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+/** 消息 MSG_040 的说明（块注释） **/
+message MSG_040 {
+    /** MSG_040 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_040.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_040.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_040 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_040.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_040 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_040.f09 行尾块注释 **/
+}
+
+message MSG_041 {
+    /** MSG_041 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_041.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_041.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_041 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_041.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_041 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_041.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_041.f10 行尾单行注释
+}
+
+// 消息 MSG_042 的说明（单行）
+message MSG_042 {
+    /** MSG_042 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_042.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_042.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_042 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+}
+
+/** 消息 MSG_043 的说明（块注释） **/
+message MSG_043 {
+    /** MSG_043 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_043.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_043.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_043 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_043.f05 行尾块注释 **/
+}
+
+message MSG_044 {
+    /** MSG_044 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_044.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_044.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_044 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_044.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+// 消息 MSG_045 的说明（单行）
+message MSG_045 {
+    /** MSG_045 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_045.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_045.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_045 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_045.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+/** 消息 MSG_046 的说明（块注释） **/
+message MSG_046 {
+    /** MSG_046 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_046.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_046.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_046 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_046.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_046 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+message MSG_047 {
+    /** MSG_047 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_047.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_047.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_047 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_047.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_047 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_047.f09 行尾块注释 **/
+}
+
+// 消息 MSG_048 的说明（单行）
+message MSG_048 {
+    /** MSG_048 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_048.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_048.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_048 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_048.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_048 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_048.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_048.f10 行尾单行注释
+}
+
+/** 消息 MSG_049 的说明（块注释） **/
+message MSG_049 {
+    /** MSG_049 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_049.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_049.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_049 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+}
+
+message MSG_050 {
+    /** MSG_050 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_050.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_050.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_050 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_050.f05 行尾块注释 **/
+}
+
+// 消息 MSG_051 的说明（单行）
+message MSG_051 {
+    /** MSG_051 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_051.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_051.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_051 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_051.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+/** 消息 MSG_052 的说明（块注释） **/
+message MSG_052 {
+    /** MSG_052 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_052.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_052.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_052 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_052.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+message MSG_053 {
+    /** MSG_053 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_053.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_053.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_053 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_053.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_053 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+// 消息 MSG_054 的说明（单行）
+message MSG_054 {
+    /** MSG_054 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_054.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_054.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_054 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_054.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_054 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_054.f09 行尾块注释 **/
+}
+
+/** 消息 MSG_055 的说明（块注释） **/
+message MSG_055 {
+    /** MSG_055 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_055.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_055.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_055 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_055.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_055 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_055.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_055.f10 行尾单行注释
+}
+
+message MSG_056 {
+    /** MSG_056 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_056.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_056.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_056 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+}
+
+// 消息 MSG_057 的说明（单行）
+message MSG_057 {
+    /** MSG_057 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_057.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_057.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_057 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_057.f05 行尾块注释 **/
+}
+
+/** 消息 MSG_058 的说明（块注释） **/
+message MSG_058 {
+    /** MSG_058 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_058.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_058.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_058 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_058.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+message MSG_059 {
+    /** MSG_059 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_059.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_059.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_059 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_059.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+// 消息 MSG_060 的说明（单行）
+message MSG_060 {
+    /** MSG_060 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_060.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_060.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_060 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_060.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_060 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+/** 消息 MSG_061 的说明（块注释） **/
+message MSG_061 {
+    /** MSG_061 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_061.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_061.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_061 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_061.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_061 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_061.f09 行尾块注释 **/
+}
+
+message MSG_062 {
+    /** MSG_062 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_062.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_062.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_062 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_062.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_062 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_062.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_062.f10 行尾单行注释
+}
+
+// 消息 MSG_063 的说明（单行）
+message MSG_063 {
+    /** MSG_063 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_063.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_063.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_063 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+}
+
+/** 消息 MSG_064 的说明（块注释） **/
+message MSG_064 {
+    /** MSG_064 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_064.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_064.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_064 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_064.f05 行尾块注释 **/
+}
+
+message MSG_065 {
+    /** MSG_065 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_065.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_065.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_065 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_065.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+// 消息 MSG_066 的说明（单行）
+message MSG_066 {
+    /** MSG_066 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_066.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_066.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_066 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_066.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+/** 消息 MSG_067 的说明（块注释） **/
+message MSG_067 {
+    /** MSG_067 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_067.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_067.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_067 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_067.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_067 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+message MSG_068 {
+    /** MSG_068 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_068.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_068.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_068 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_068.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_068 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_068.f09 行尾块注释 **/
+}
+
+// 消息 MSG_069 的说明（单行）
+message MSG_069 {
+    /** MSG_069 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_069.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_069.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_069 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_069.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_069 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_069.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_069.f10 行尾单行注释
+}
+
+/** 消息 MSG_070 的说明（块注释） **/
+message MSG_070 {
+    /** MSG_070 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_070.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_070.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_070 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+}
+
+message MSG_071 {
+    /** MSG_071 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_071.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_071.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_071 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_071.f05 行尾块注释 **/
+}
+
+// 消息 MSG_072 的说明（单行）
+message MSG_072 {
+    /** MSG_072 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_072.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_072.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_072 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_072.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+/** 消息 MSG_073 的说明（块注释） **/
+message MSG_073 {
+    /** MSG_073 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_073.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_073.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_073 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_073.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+message MSG_074 {
+    /** MSG_074 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_074.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_074.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_074 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_074.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_074 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+// 消息 MSG_075 的说明（单行）
+message MSG_075 {
+    /** MSG_075 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_075.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_075.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_075 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_075.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_075 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_075.f09 行尾块注释 **/
+}
+
+/** 消息 MSG_076 的说明（块注释） **/
+message MSG_076 {
+    /** MSG_076 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_076.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_076.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_076 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_076.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_076 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_076.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_076.f10 行尾单行注释
+}
+
+message MSG_077 {
+    /** MSG_077 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_077.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_077.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_077 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+}
+
+// 消息 MSG_078 的说明（单行）
+message MSG_078 {
+    /** MSG_078 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_078.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_078.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_078 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_078.f05 行尾块注释 **/
+}
+
+/** 消息 MSG_079 的说明（块注释） **/
+message MSG_079 {
+    /** MSG_079 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_079.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_079.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_079 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_079.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+message MSG_080 {
+    /** MSG_080 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_080.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_080.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_080 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_080.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+// 消息 MSG_081 的说明（单行）
+message MSG_081 {
+    /** MSG_081 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_081.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_081.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_081 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_081.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_081 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+/** 消息 MSG_082 的说明（块注释） **/
+message MSG_082 {
+    /** MSG_082 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_082.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_082.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_082 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_082.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_082 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_082.f09 行尾块注释 **/
+}
+
+message MSG_083 {
+    /** MSG_083 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_083.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_083.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_083 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_083.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_083 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_083.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_083.f10 行尾单行注释
+}
+
+// 消息 MSG_084 的说明（单行）
+message MSG_084 {
+    /** MSG_084 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_084.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_084.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_084 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+}
+
+/** 消息 MSG_085 的说明（块注释） **/
+message MSG_085 {
+    /** MSG_085 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_085.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_085.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_085 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_085.f05 行尾块注释 **/
+}
+
+message MSG_086 {
+    /** MSG_086 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_086.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_086.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_086 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_086.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+// 消息 MSG_087 的说明（单行）
+message MSG_087 {
+    /** MSG_087 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_087.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_087.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_087 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_087.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+/** 消息 MSG_088 的说明（块注释） **/
+message MSG_088 {
+    /** MSG_088 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_088.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_088.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_088 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_088.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_088 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+message MSG_089 {
+    /** MSG_089 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_089.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_089.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_089 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_089.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_089 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_089.f09 行尾块注释 **/
+}
+
+// 消息 MSG_090 的说明（单行）
+message MSG_090 {
+    /** MSG_090 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_090.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_090.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_090 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_090.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_090 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_090.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_090.f10 行尾单行注释
+}
+
+/** 消息 MSG_091 的说明（块注释） **/
+message MSG_091 {
+    /** MSG_091 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_091.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_091.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_091 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+}
+
+message MSG_092 {
+    /** MSG_092 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_092.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_092.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_092 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_092.f05 行尾块注释 **/
+}
+
+// 消息 MSG_093 的说明（单行）
+message MSG_093 {
+    /** MSG_093 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_093.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_093.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_093 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_093.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+/** 消息 MSG_094 的说明（块注释） **/
+message MSG_094 {
+    /** MSG_094 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_094.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_094.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_094 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_094.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+message MSG_095 {
+    /** MSG_095 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_095.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_095.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_095 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_095.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_095 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+// 消息 MSG_096 的说明（单行）
+message MSG_096 {
+    /** MSG_096 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_096.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_096.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_096 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_096.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_096 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_096.f09 行尾块注释 **/
+}
+
+/** 消息 MSG_097 的说明（块注释） **/
+message MSG_097 {
+    /** MSG_097 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_097.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_097.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_097 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_097.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_097 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_097.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_097.f10 行尾单行注释
+}
+
+message MSG_098 {
+    /** MSG_098 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_098.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_098.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_098 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+}
+
+// 消息 MSG_099 的说明（单行）
+message MSG_099 {
+    /** MSG_099 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_099.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_099.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_099 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_099.f05 行尾块注释 **/
+}
+
+/** 消息 MSG_100 的说明（块注释） **/
+message MSG_100 {
+    /** MSG_100 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_100.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_100.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_100 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_100.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+message MSG_101 {
+    /** MSG_101 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_101.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_101.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_101 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_101.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+// 消息 MSG_102 的说明（单行）
+message MSG_102 {
+    /** MSG_102 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_102.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_102.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_102 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_102.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_102 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+/** 消息 MSG_103 的说明（块注释） **/
+message MSG_103 {
+    /** MSG_103 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_103.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_103.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_103 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_103.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_103 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_103.f09 行尾块注释 **/
+}
+
+message MSG_104 {
+    /** MSG_104 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_104.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_104.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_104 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_104.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_104 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_104.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_104.f10 行尾单行注释
+}
+
+// 消息 MSG_105 的说明（单行）
+message MSG_105 {
+    /** MSG_105 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_105.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_105.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_105 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+}
+
+/** 消息 MSG_106 的说明（块注释） **/
+message MSG_106 {
+    /** MSG_106 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_106.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_106.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_106 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_106.f05 行尾块注释 **/
+}
+
+message MSG_107 {
+    /** MSG_107 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_107.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_107.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_107 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_107.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+// 消息 MSG_108 的说明（单行）
+message MSG_108 {
+    /** MSG_108 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_108.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_108.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_108 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_108.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+/** 消息 MSG_109 的说明（块注释） **/
+message MSG_109 {
+    /** MSG_109 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_109.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_109.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_109 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_109.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_109 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+message MSG_110 {
+    /** MSG_110 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_110.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_110.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_110 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_110.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_110 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_110.f09 行尾块注释 **/
+}
+
+// 消息 MSG_111 的说明（单行）
+message MSG_111 {
+    /** MSG_111 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_111.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_111.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_111 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_111.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_111 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_111.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_111.f10 行尾单行注释
+}
+
+/** 消息 MSG_112 的说明（块注释） **/
+message MSG_112 {
+    /** MSG_112 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_112.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_112.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_112 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+}
+
+message MSG_113 {
+    /** MSG_113 的字段 f00：上方块注释 **/
+    int32 i32_f00 = 1;
+    bool flag_f01 = 2;    /** MSG_113.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_113.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_113 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    sint32 s32_f05 = 6;    /** MSG_113.f05 行尾块注释 **/
+}
+
+// 消息 MSG_114 的说明（单行）
+message MSG_114 {
+    /** MSG_114 的字段 f00：上方块注释 **/
+    bool flag_f00 = 1;
+    uint64 u64_f01 = 2;    /** MSG_114.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_114.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_114 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    uint32 u32_f05 = 6;    /** MSG_114.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+}
+
+/** 消息 MSG_115 的说明（块注释） **/
+message MSG_115 {
+    /** MSG_115 的字段 f00：上方块注释 **/
+    uint64 u64_f00 = 1;
+    int64 i64_f01 = 2;    /** MSG_115.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_115.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:8] 二进制数据 **/
+    /** MSG_115 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+    int32 i32_f05 = 6;    /** MSG_115.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    uint64 u64_f07 = 8;
+}
+
+message MSG_116 {
+    /** MSG_116 的字段 f00：上方块注释 **/
+    int64 i64_f00 = 1;
+    fixed32 fx32_f01 = 2;    /** MSG_116.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_116.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:12] 二进制数据 **/
+    /** MSG_116 的字段 f04：上方块注释 **/
+    /** [max_size:16] 文本内容 **/
+    string s_f04 = 5;
+    bool flag_f05 = 6;    /** MSG_116.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    int64 i64_f07 = 8;
+    /** MSG_116 的字段 f08：上方块注释 **/
+    fixed32 fx32_f08 = 9;
+}
+
+// 消息 MSG_117 的说明（单行）
+message MSG_117 {
+    /** MSG_117 的字段 f00：上方块注释 **/
+    fixed32 fx32_f00 = 1;
+    sint32 s32_f01 = 2;    /** MSG_117.f01 行尾块注释 **/
+    ENUM_00 e_f02 = 3;    // MSG_117.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:16] 二进制数据 **/
+    /** MSG_117 的字段 f04：上方块注释 **/
+    /** [max_size:24] 文本内容 **/
+    string s_f04 = 5;
+    uint64 u64_f05 = 6;    /** MSG_117.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    fixed32 fx32_f07 = 8;
+    /** MSG_117 的字段 f08：上方块注释 **/
+    sint32 s32_f08 = 9;
+    uint32 u32_f09 = 10;    /** MSG_117.f09 行尾块注释 **/
+}
+
+/** 消息 MSG_118 的说明（块注释） **/
+message MSG_118 {
+    /** MSG_118 的字段 f00：上方块注释 **/
+    sint32 s32_f00 = 1;
+    uint32 u32_f01 = 2;    /** MSG_118.f01 行尾块注释 **/
+    ENUM_01 e_f02 = 3;    // MSG_118.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:20] 二进制数据 **/
+    /** MSG_118 的字段 f04：上方块注释 **/
+    /** [max_size:32] 文本内容 **/
+    string s_f04 = 5;
+    int64 i64_f05 = 6;    /** MSG_118.f05 行尾块注释 **/
+    repeated uint32 r_f06 = 7;
+    sint32 s32_f07 = 8;
+    /** MSG_118 的字段 f08：上方块注释 **/
+    uint32 u32_f08 = 9;
+    int32 i32_f09 = 10;    /** MSG_118.f09 行尾块注释 **/
+    bool flag_f10 = 11;    // MSG_118.f10 行尾单行注释
+}
+
+message MSG_119 {
+    /** MSG_119 的字段 f00：上方块注释 **/
+    uint32 u32_f00 = 1;
+    int32 i32_f01 = 2;    /** MSG_119.f01 行尾块注释 **/
+    ENUM_02 e_f02 = 3;    // MSG_119.f02 行尾单行注释
+    bytes b_f03 = 4;/** [max_size:24] 二进制数据 **/
+    /** MSG_119 的字段 f04：上方块注释 **/
+    /** [max_size:40] 文本内容 **/
+    string s_f04 = 5;
+}

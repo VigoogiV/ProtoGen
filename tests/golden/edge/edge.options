@@ -1,0 +1,5 @@
+edge.test.Outer.raw max_size:16
+edge.test.Outer.nums max_count:4
+edge.test.Outer.inners max_count:2
+edge.test.Outer.Nested.name max_size:12
+edge.test.Inner.s max_size:8

@@ -1,0 +1,41 @@
+// 边界场景样本：嵌套 message、repeated、proto2 规则、默认值、枚举引用
+syntax = "proto2";
+
+package edge.test;
+
+enum Color {
+  RED = 0;
+  GREEN = 1;
+  BLUE = 2;
+}
+
+message Inner {
+  required uint32 a = 1;
+  optional string s = 2 [default = "hi"];
+}
+
+message Outer {
+  optional Inner inner = 1;
+  repeated uint32 nums = 2;
+  repeated Inner inners = 3;
+  optional Color color = 4 [default = GREEN];
+  optional bytes raw = 5;
+  optional int32 neg = 6 [default = -5];
+  optional bool flag = 7 [default = true];
+  optional double d = 8;
+  optional float f = 9;
+  optional fixed32 fx32 = 10;
+  optional sint64 sx64 = 11;
+
+  // 嵌套 message
+  message Nested {
+    optional string name = 1;
+  }
+  optional Nested nested = 12;
+}
+
+// callback 分支：无 max_size 的 bytes
+message CallbackCase {
+  optional bytes data = 1;
+  repeated string names = 2;
+}

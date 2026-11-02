@@ -1,0 +1,10 @@
+[package]
+name = "protogen-core"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+
+[dependencies]
+protox.workspace = true
+prost-types.workspace = true
+encoding_rs.workspace = true
