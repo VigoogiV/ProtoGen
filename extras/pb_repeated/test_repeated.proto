@@ -1,0 +1,12 @@
+// pb_repeated 的测试样本：repeated message 字段（不设 max_count，生成 callback 形式）
+syntax = "proto3";
+
+message Item {
+    uint32 id = 1;
+    string name = 2;
+}
+
+message Container {
+    // 没有 max_count → nanopb 生成 pb_callback_t，需要自己实现编解码回调
+    repeated Item items = 1;
+}

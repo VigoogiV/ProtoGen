@@ -178,22 +178,47 @@ cargo test
 
 ## 配套：C 端编解码封装
 
-`extras/pb_array/` 提供一个可选的 C 模块，把 nanopb 的编解码样板代码收进两个函数，
-并解决「多条消息拼进一个缓冲区后无法切分」的问题。
+`extras/` 下有两个可选的 C 模块，补 nanopb 用起来啰嗦的两处。
+
+### `extras/pb_repeated` —— repeated 字段
+
+proto 里的 repeated 字段如果**没有 `max_count`**，nanopb 会生成 `pb_callback_t`，
+每个字段都得手写「遍历数组逐个 `pb_encode_submessage`」和「循环 `pb_decode` 到流结束」。
+这个模块把这两段做成通用回调：
 
 ```c
-/* 单条 */
-pb_msg_encode(buf, sizeof(buf), &msg, Msg_fields, &len, NULL);
-pb_msg_decode(buf, len, &msg, Msg_fields, NULL);
+pb_repeated_t ctx;
+pb_repeated_init(&ctx, items, sizeof(Item_t), 8);   /* 数组、元素大小、容量 */
+ctx.count = 5;                                       /* 编码前指定条数 */
 
-/* 数组：每条前加 varint 长度前缀 */
+PB_REPEATED_BIND_ENCODE(msg, items, &ctx);
+pb_msg_encode(buf, sizeof(buf), &msg, Container_fields, &len, NULL);
+
+/* 解码：绑定后 ctx.count 就是实际条数 */
+PB_REPEATED_BIND_DECODE(out, items, &ctx);
+pb_msg_decode(buf, len, &out, Container_fields, NULL);
+```
+
+> 如果 repeated 字段**有** `max_count`（生成静态数组），nanopb 本来就全自动处理，
+> 不需要这个模块——那种情况只有「填充数组」啰嗦，用 `PB_REPEATED_SET` / `PB_REPEATED_PUSH` 宏即可。
+
+详见 [extras/pb_repeated/README.md](extras/pb_repeated/README.md)。
+
+### `extras/pb_array` —— 多条消息拼接
+
+把**多条独立消息**编进一个缓冲区，每条前加 varint 长度前缀，接收方逐条切分：
+
+```c
 pb_array_encode(buf, sizeof(buf), arr, 10, sizeof(arr[0]), Msg_fields, &len, NULL);
 pb_array_decode(buf, len, out, 10, sizeof(out[0]), Msg_fields, &count, NULL);
 ```
 
 线格式：`[len1:varint][payload1][len2:varint][payload2]...`
 
-详见 [extras/pb_array/README.md](extras/pb_array/README.md)。已在 gcc 7.3 + nanopb 0.3.9.1 上通过 8 项测试。
+详见 [extras/pb_array/README.md](extras/pb_array/README.md)。
+
+两个模块解决的是不同层面的问题，可以同时用：`pb_array` 管消息之间，`pb_repeated` 管消息内部。
+都在 gcc 7.3 + nanopb 0.3.9.1 上用 `-Werror` 验证过。
 
 ## 架构
 
