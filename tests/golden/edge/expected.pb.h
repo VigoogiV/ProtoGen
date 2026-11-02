@@ -70,6 +70,8 @@ typedef struct _edge_test_Outer {
     int64_t sx64;
     bool has_nested;
     edge_test_Outer_Nested nested;
+    pb_size_t tags_count;
+    char tags[4][16];
 /* @@protoc_insertion_point(struct:edge_test_Outer) */
 } edge_test_Outer;
 
@@ -81,11 +83,11 @@ extern const bool edge_test_Outer_flag_default;
 
 /* Initializer values for message structs */
 #define edge_test_Inner_init_default             {0, false, "hi"}
-#define edge_test_Outer_init_default             {false, edge_test_Inner_init_default, 0, {0, 0, 0, 0}, 0, {edge_test_Inner_init_default, edge_test_Inner_init_default}, false, edge_test_Color_GREEN, false, {0, {0}}, false, -5, false, true, false, 0, false, 0, false, 0, false, 0, false, edge_test_Outer_Nested_init_default}
+#define edge_test_Outer_init_default             {false, edge_test_Inner_init_default, 0, {0, 0, 0, 0}, 0, {edge_test_Inner_init_default, edge_test_Inner_init_default}, false, edge_test_Color_GREEN, false, {0, {0}}, false, -5, false, true, false, 0, false, 0, false, 0, false, 0, false, edge_test_Outer_Nested_init_default, 0, {"", "", "", ""}}
 #define edge_test_Outer_Nested_init_default      {false, ""}
 #define edge_test_CallbackCase_init_default      {{{NULL}, NULL}, {{NULL}, NULL}}
 #define edge_test_Inner_init_zero                {0, false, ""}
-#define edge_test_Outer_init_zero                {false, edge_test_Inner_init_zero, 0, {0, 0, 0, 0}, 0, {edge_test_Inner_init_zero, edge_test_Inner_init_zero}, false, _edge_test_Color_MIN, false, {0, {0}}, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, edge_test_Outer_Nested_init_zero}
+#define edge_test_Outer_init_zero                {false, edge_test_Inner_init_zero, 0, {0, 0, 0, 0}, 0, {edge_test_Inner_init_zero, edge_test_Inner_init_zero}, false, _edge_test_Color_MIN, false, {0, {0}}, false, 0, false, 0, false, 0, false, 0, false, 0, false, 0, false, edge_test_Outer_Nested_init_zero, 0, {"", "", "", ""}}
 #define edge_test_Outer_Nested_init_zero         {false, ""}
 #define edge_test_CallbackCase_init_zero         {{{NULL}, NULL}, {{NULL}, NULL}}
 
@@ -107,16 +109,17 @@ extern const bool edge_test_Outer_flag_default;
 #define edge_test_Outer_fx32_tag                 10
 #define edge_test_Outer_sx64_tag                 11
 #define edge_test_Outer_nested_tag               12
+#define edge_test_Outer_tags_tag                 13
 
 /* Struct field encoding specification for nanopb */
 extern const pb_field_t edge_test_Inner_fields[3];
-extern const pb_field_t edge_test_Outer_fields[13];
+extern const pb_field_t edge_test_Outer_fields[14];
 extern const pb_field_t edge_test_Outer_Nested_fields[2];
 extern const pb_field_t edge_test_CallbackCase_fields[3];
 
 /* Maximum encoded size of messages (where known) */
 #define edge_test_Inner_size                     16
-#define edge_test_Outer_size                     157
+#define edge_test_Outer_size                     229
 #define edge_test_Outer_Nested_size              14
 /* edge_test_CallbackCase_size depends on runtime parameters */
 

@@ -221,12 +221,12 @@ pub fn collect_options(proto: &Path) -> Result<(String, String), String> {
     let content = options::generate_options(&file);
 
     if content.is_empty() {
-        log.push_str("[WARN] 该 .proto 中没有 bytes/string 字段，无需生成 .options\n");
+        log.push_str("[WARN] 该 .proto 中没有需要上限声明的字段（bytes/string 或 repeated）\n");
         return Ok((String::new(), log));
     }
 
     log.push_str(&format!(
-        "[INFO] 扫描到 {} 个 bytes/string 字段\n",
+        "[INFO] 扫描到 {} 个需要上限声明的字段（bytes/string 或 repeated）\n",
         content.lines().count()
     ));
     log.push_str(&format!(
@@ -324,6 +324,18 @@ pub fn run_check(proto: &Path, options_file: Option<PathBuf>) -> Result<(bool, S
         }
         if report.extra.len() > 10 {
             log.push_str(&format!("  ...（共 {} 项）\n", report.extra.len()));
+        }
+    }
+    if !report.no_max_count.is_empty() {
+        log.push_str(&format!(
+            "[WARN] {} 个 repeated 字段没有 max_count，会退化成 callback:\n",
+            report.no_max_count.len()
+        ));
+        for k in report.no_max_count.iter().take(10) {
+            log.push_str(&format!("  - {}\n", k));
+        }
+        if report.no_max_count.len() > 10 {
+            log.push_str(&format!("  ...（共 {} 项）\n", report.no_max_count.len()));
         }
     }
 

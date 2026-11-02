@@ -32,6 +32,9 @@ message Outer {
     optional string name = 1;
   }
   optional Nested nested = 12;
+
+  // static 的 repeated string：生成二维数组 char tags[max_count][max_size]
+  repeated string tags = 13;
 }
 
 // callback 分支：无 max_size 的 bytes

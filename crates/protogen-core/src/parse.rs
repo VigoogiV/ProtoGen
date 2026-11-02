@@ -417,14 +417,16 @@ fn build_field(
 
     if allocation == Allocation::Static {
         match pbtype.as_str() {
-            "STRING" => {
+            "STRING" | "FIXED_LENGTH_BYTES" => {
                 if let Some(ms) = max_size {
-                    array_decl = format!("[{}]", ms);
-                }
-            }
-            "FIXED_LENGTH_BYTES" => {
-                if let Some(ms) = max_size {
-                    array_decl = format!("[{}]", ms);
+                    // repeated 的 string/fixed_length_bytes 是二维的：
+                    // `char tags[max_count][max_size]`，两个维度都要写
+                    if rules == Rules::Repeated {
+                        let mc = max_count.unwrap_or(0);
+                        array_decl = format!("[{}][{}]", mc, ms);
+                    } else {
+                        array_decl = format!("[{}]", ms);
+                    }
                 }
             }
             _ => {}

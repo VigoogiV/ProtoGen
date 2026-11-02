@@ -12,7 +12,7 @@
 
 1. **`.pb.c` / `.pb.h`** —— nanopb 0.3.9.1 风格的 C 代码
 2. **注释同步** —— 把 `.proto` 里的注释写进 `.pb.h` 对应位置，枚举值自动对齐
-3. **`.options`** —— 从 `bytes`/`string` 字段的 `[max_size:N]` 注释生成模板，并可校验是否漏填
+3. **`.options`** —— 从注释里的 `[max_size:N]` / `[max_count:N]` 生成模板，并可校验是否漏填
 
 输出与旧 C# 工具**逐字节一致**（见"验证"一节）。
 
@@ -90,6 +90,38 @@ protogen check example.proto
 ### `protogen options <proto>`
 
 生成 `.options` 模板。`--stdout` 只打印不写文件（此时**内容走 stdout、日志走 stderr**，方便脚本分离）。
+
+从 proto 注释里提取两类上限，行尾或上方注释都可以：
+
+| 字段类型 | 提取的键 | 注释写法 |
+|---|---|---|
+| `bytes` / `string` | `max_size:N` | `/** [max_size:64] 说明 **/` |
+| `repeated` | `max_count:N` | `/** [max_count:8] 说明 **/` |
+| `repeated string` / `repeated bytes` | 两个都要 | `/** [max_size:16] [max_count:6] **/` |
+
+```proto
+message Item {
+    uint32 id = 1;
+    string name = 2;            /** [max_size:32] 名字 **/
+}
+
+message Container {
+    /** [max_count:8] 条目列表 **/
+    repeated Item items = 1;
+    repeated string tags = 2;   /** [max_size:16] [max_count:6] 标签 **/
+}
+```
+
+生成：
+
+```
+Item.name      			max_size:32
+Container.items			max_count:8
+Container.tags 			max_size:16 max_count:6
+```
+
+`repeated` 配了 `max_count` 才会生成静态数组（`Item items[8]`）；
+不配就是 `pb_callback_t`，仍可用但需要自己写回调。
 
 ### `protogen check <proto>`
 

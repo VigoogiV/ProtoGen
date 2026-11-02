@@ -20,7 +20,7 @@ const pb_field_t edge_test_Inner_fields[3] = {
     PB_LAST_FIELD
 };
 
-const pb_field_t edge_test_Outer_fields[13] = {
+const pb_field_t edge_test_Outer_fields[14] = {
     PB_FIELD(  1, MESSAGE , OPTIONAL, STATIC  , FIRST, edge_test_Outer, inner, inner, &edge_test_Inner_fields),
     PB_FIELD(  2, UINT32  , REPEATED, STATIC  , OTHER, edge_test_Outer, nums, inner, 0),
     PB_FIELD(  3, MESSAGE , REPEATED, STATIC  , OTHER, edge_test_Outer, inners, nums, &edge_test_Inner_fields),
@@ -33,6 +33,7 @@ const pb_field_t edge_test_Outer_fields[13] = {
     PB_FIELD( 10, FIXED32 , OPTIONAL, STATIC  , OTHER, edge_test_Outer, fx32, f, 0),
     PB_FIELD( 11, SINT64  , OPTIONAL, STATIC  , OTHER, edge_test_Outer, sx64, fx32, 0),
     PB_FIELD( 12, MESSAGE , OPTIONAL, STATIC  , OTHER, edge_test_Outer, nested, sx64, &edge_test_Outer_Nested_fields),
+    PB_FIELD( 13, STRING  , REPEATED, STATIC  , OTHER, edge_test_Outer, tags, nested, 0),
     PB_LAST_FIELD
 };
 
